@@ -1,15 +1,8 @@
 package pages;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 
 public class AddRemoveElementsPage {
@@ -27,8 +20,10 @@ public class AddRemoveElementsPage {
         }
     }
 
-    public void clickDeleteElementButton(){
-        driver.findElement(deleteButton).click();
+    public void clickDeleteElementButton(int clickCount) {
+        for (int i = 1; i <= clickCount; i++) {
+            driver.findElement(deleteButton).click();
+        }
     }
 
     public int getDeleteElementButtonsNumber(){

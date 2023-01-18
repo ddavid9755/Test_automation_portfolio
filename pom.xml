@@ -15,19 +15,16 @@
         <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.surefire.plugin>3.0.0-M5</maven.surefire.plugin>
         <maven.site.plugin>3.11.0</maven.site.plugin>
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <testng.version>7.7.0</testng.version>
         <selenium.java.version>4.7.1</selenium.java.version>
         <selenium.server.version>4.0.0-alpha-2</selenium.server.version>
         <selenium.htmlunit.driver.version>2.52.0</selenium.htmlunit.driver.version>
         <webdrivermanager.version>5.3.1</webdrivermanager.version>
-        <typesafe.version>1.4.2</typesafe.version>
-        <lombok.version>1.18.24</lombok.version>
-        <slf4j.version>2.0.5</slf4j.version>
         <log4j.core>2.19.0</log4j.core>
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -60,35 +57,18 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.typesafe</groupId>
-            <artifactId>config</artifactId>
-            <version>${typesafe.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-reload4j</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>${log4j.core}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.core}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

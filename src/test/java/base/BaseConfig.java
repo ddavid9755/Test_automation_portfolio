@@ -7,25 +7,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.HomePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-
-import java.time.Duration;
 
 import static org.testng.Assert.assertEquals;
+
 
 public class BaseConfig {
 
     private WebDriver driver;
     private ConfigFileReader configFileReader;
     protected HomePage homePage;
+    public static final Logger log = LogManager.getLogger();
 
 
     @BeforeMethod
     @Parameters("browserType")
     public void setUp(String browserType) {
+        log.info("Determining and setting up browser");
         configFileReader = new ConfigFileReader();
 
         if (browserType.equalsIgnoreCase("Chrome"))
@@ -49,5 +51,6 @@ public class BaseConfig {
     @AfterMethod
     public void tearDown() {
         driver.quit();
+        log.info("Closing driver");
     }
 }

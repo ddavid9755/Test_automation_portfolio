@@ -5,7 +5,7 @@
     <test name = "Test On Chrome">
         <parameter name="browserType" value="Chrome"/>
         <classes>
-            <class name = "addRemoveElements.AddRemoveElementsTests"/>
+            <class name = "abTesting.AbTestingTests"/>
         </classes>
     </test>
 

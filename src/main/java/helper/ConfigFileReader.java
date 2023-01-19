@@ -28,10 +28,34 @@ public class ConfigFileReader {
             }
         }
 
-        public String getApplicationUrl() {
+    public String getApplicationUrl() {
         String homePage = properties.getProperty("homePage");
         if(homePage != null) return homePage;
         else throw new RuntimeException("Url not specified in configuration.properties file");
-        }
+    }
+
+    public String getBasicAuthUsername() {
+        String basicAuthUsername = properties.getProperty("basicAuthUsername");
+        if(basicAuthUsername != null) return basicAuthUsername;
+        else throw new RuntimeException("BasicAuthUsername not specified in configuration.properties file");
+    }
+
+    public String getBasicAuthPassword() {
+        String basicAuthPassword = properties.getProperty("basicAuthPassword");
+        if(basicAuthPassword != null) return basicAuthPassword;
+        else throw new RuntimeException("BasicAuthPassword not specified in configuration.properties file");
+    }
+
+    public String getAfterAuthExpectedTitle() {
+        String afterAuthExpectedTitle = properties.getProperty("afterAuthExpectedTitle");
+        if(afterAuthExpectedTitle != null) return afterAuthExpectedTitle;
+        else throw new RuntimeException("AfterAuthExpectedTitle not specified in configuration.properties file");
+    }
+
+    public String getABTestingPageExpectedTitle() {
+        String aBTestingPageExpectedTitle = properties.getProperty("aBTestingPageExpectedTitle");
+        if(aBTestingPageExpectedTitle != null) return aBTestingPageExpectedTitle;
+        else throw new RuntimeException("ABTestingPageExpectedTitle not specified in configuration.properties file");
+    }
 
 }

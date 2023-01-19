@@ -14,6 +14,7 @@ public class BrowserCapabilities {
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.addArguments("--enable-javascript");
         options.addArguments("--disable-notifications");
+        options.addArguments("--incognito");
         return options;
     }
 

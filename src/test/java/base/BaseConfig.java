@@ -18,16 +18,15 @@ import static org.testng.Assert.assertEquals;
 
 public class BaseConfig {
 
-    private WebDriver driver;
-    private ConfigFileReader configFileReader;
+    protected WebDriver driver;
+    protected ConfigFileReader configFileReader;
     protected HomePage homePage;
-    public static final Logger log = LogManager.getLogger();
+    protected static final Logger log = LogManager.getLogger();
 
 
     @BeforeMethod
     @Parameters("browserType")
     public void setUp(String browserType) {
-        log.info("Determining and setting up browser");
         configFileReader = new ConfigFileReader();
 
         if (browserType.equalsIgnoreCase("Chrome"))
@@ -51,6 +50,6 @@ public class BaseConfig {
     @AfterMethod
     public void tearDown() {
         driver.quit();
-        log.info("Closing driver");
+        log.info("Closing test.");
     }
 }

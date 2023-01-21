@@ -16,9 +16,10 @@ public class Helper {
         this.driver = driver;
     }
 
-    public void checkLinks() {
-            List<WebElement> links = driver.findElements(By.tagName("a"));
-            System.out.println("Total Link Size: " + links.size());
+    public int checkLinks() {
+        int count = 0;
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+            System.out.println("Links count: " + links.size());
             for (int i = 0; i < links.size(); i++) {
                 WebElement element = links.get(i);
                 String url = element.getAttribute("href");
@@ -29,18 +30,20 @@ public class Helper {
                     int code = httpConn.getResponseCode();
                     if (code >= 400) {
                         System.out.println("Broken Link: " + url);
-                    } else {
-                        System.out.println("Valid Link: " + url);
+                        count++;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+            System.out.println("Broken links count: " + count);
+            return count;
         }
 
-    public HomePage checkImages() {
+    public int checkImages() {
+            int count = 0;
             List<WebElement> images = driver.findElements(By.tagName("img"));
-            System.out.println("Total Images number: " + images.size());
+            System.out.println("Images count: " + images.size());
             for (int i = 0; i < images.size(); i++) {
                 WebElement element = images.get(i);
                 String url = element.getAttribute("src");
@@ -51,14 +54,13 @@ public class Helper {
                     int code = httpConn.getResponseCode();
                     if (code >= 400) {
                         System.out.println("Broken Image: " + url);
-                    } else {
-                        System.out.println("Valid Image: " + url);
+                        count++;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            driver.navigate().back();
-            return new HomePage(driver);
+            System.out.println("Broken images count: " + count);
+        return count;
     }
 }

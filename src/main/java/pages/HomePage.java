@@ -3,12 +3,14 @@ package pages;
 import com.gargoylesoftware.htmlunit.Page;
 import helper.Helper;
 import helper.PageEnums;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
     private WebDriver driver;
-
+    private static final Logger log = LogManager.getLogger();
     private By homePageTitle = By.className("heading");
 
     public HomePage(WebDriver driver) {
@@ -43,6 +45,11 @@ public class HomePage {
     public BasicAuthPage openBasicAuthPage(){
         clickMenuElement(PageEnums.PageNames.BASICAUTH.name);
         return new BasicAuthPage(driver);
+    }
+
+    public Helper openBrokenImagesHelperPage() {
+        clickMenuElement(PageEnums.PageNames.BROKENIMAGES.name);
+        return new Helper(driver);
     }
 
 }

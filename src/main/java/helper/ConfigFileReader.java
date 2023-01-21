@@ -58,4 +58,10 @@ public class ConfigFileReader {
         else throw new RuntimeException("ABTestingPageExpectedTitle not specified in configuration.properties file");
     }
 
+    public String getAfterNoAuthExpectedTitle() {
+        String afterNoAuthExpectedTitle = properties.getProperty("afterNoAuthExpectedTitle");
+        if(afterNoAuthExpectedTitle != null) return afterNoAuthExpectedTitle;
+        else throw new RuntimeException("afterNoAuthExpectedTitle not specified in configuration.properties file");
+    }
+
 }

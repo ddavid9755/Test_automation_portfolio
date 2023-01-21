@@ -34,4 +34,9 @@ public class BasicAuthPage {
         driver.findElement(noAuthMsg).isDisplayed();
     }
 
+    public String checkContentAfterStopAuth() {
+        String contentText = driver.findElement(noAuthMsg).getText();
+        return contentText;
+    }
+
 }

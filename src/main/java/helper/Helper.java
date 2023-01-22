@@ -3,8 +3,6 @@ package helper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.HomePage;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;

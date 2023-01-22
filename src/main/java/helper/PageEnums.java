@@ -30,7 +30,7 @@ public class PageEnums {
         INFINITESCROLL("Infinite Scroll"),
         INPUTS("Inputs"),
         JQUERYUI("JQuery UI Menus"),
-        JAVASCRIPTALERT("Javascript Alerts"),
+        JAVASCRIPTALERT("JavaScript Alerts"),
         JAVASCRIPTONLOADEVENTERROR("Javascript onload event error"),
         KEYPRESSES("Key Presses"),
         LARGEANDDEEPDOM("Large & Deep DOM"),
